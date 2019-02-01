@@ -6,7 +6,7 @@ import android.util.Log
 import kotlin.math.log
 
 /**
- * 基本类型，数字，字符，布尔，数组，字符串
+ * 基本类型，数字，字符，布尔，数组，无符号整型，字符串
  * 链接：https://www.kotlincn.net/docs/reference/basic-types.html
  *
  */
@@ -25,6 +25,9 @@ class BasicTypeAct:AppCompatActivity(){
         testArray2()
         testArray3()
         testUnsignedNumber()
+        testString()
+        testString2()
+        testString3()
     }
 
     /**
@@ -118,5 +121,49 @@ class BasicTypeAct:AppCompatActivity(){
         val d=1u //未提供预期类型，常量使用于UInt
         val e=1uL //后缀UL显式将字面值标记为无符号长整型
         Log.e("unsigned",e.toString())
+    }
+    /**
+     * 字符串用String类型来表示，字符串是不可变的。
+     * 字符串的元素（字符）可以使用索引运算符访问;s[i]
+     * 还可以使用for循环迭代字符串
+     * 可以用+操作符连接字符串。这也适用于连接字符串和其他类型的值，只要表达式中的第一个值是字符串。
+     * 大多数情况下，优先使用字符串模板或原始字符串，而不是字符串连接
+     */
+    fun testString(){
+        var str="abcd"
+        //No set method providing array access
+//        str[0]='1'
+        for(a in str){
+            Log.e("testString",a.toString())
+        }
+        var str2=str+1
+        Log.e("testString",str2)
+        //none of the following functions can be called with the arguments supplied
+//        var str3=1+str2
+    }
+
+    /**
+     * 字符串包含两种，第一种普通字符串，其中可以有转义字符
+     * 第二种，原始字符串，使用三个引号括起来，内部没有转义，并且可以包含换行以及任何其他字符
+     *
+     */
+    fun testString2(){
+        var s="Hello,world!\n"
+        Log.e("testString2",s);
+        var s2="""|Tell me and I forget.
+            |Teach me and I remember.
+            |Involve me and I learn.
+            |(Benjamin Franklin)""".trimMargin()
+        Log.e("testString2",s2)
+        var s3="""abced"""
+        for(c in s3){
+            Log.e("testString2",c.toString())
+        }
+    }
+    fun testString3(){
+        val i=10;
+        Log.e("testString3","i=$i")
+        val s="abcd"
+        Log.e("testString3","$s.length is ${s.length}")
     }
 }
