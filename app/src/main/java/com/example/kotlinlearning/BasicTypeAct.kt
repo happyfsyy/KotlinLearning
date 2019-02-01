@@ -3,7 +3,6 @@ package com.example.kotlinlearning
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import kotlin.math.log
 
 /**
  * 基本类型，数字，字符，布尔，数组，无符号整型，字符串
