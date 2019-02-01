@@ -7,6 +7,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * 参考链接：https://www.kotlincn.net/docs/reference/basic-syntax.html
+ * 基础语法
  */
 class MainActivity : AppCompatActivity() {
 
@@ -16,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         init_text.textSize=16f
         init_text.setText(R.string.hello_kotlin)
         init_text.setTextColor(resources.getColor(R.color.red))
-
         Log.e("sum: ",sum(1,2).toString())
         Log.e("sum2: ",sum2(2,3).toString())
         logSum(3,4)
