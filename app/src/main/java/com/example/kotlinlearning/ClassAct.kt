@@ -17,9 +17,13 @@ class ClassAct:AppCompatActivity(){
         Person2("")
         InitOrderDemo("hello")
         var person=Person3("ale","yuan",13)
-        LogUtil.e(person.firstname)
+        person.age=1
+        LogUtil.e(person.lastName)
         //这行是错的，声明了次构造函数之后，如果没有主构造函数，编译器不会生成没有参数的主构造函数
-//        var parent=Person4()
+        //no value passed for parameter 'parent'
+        //var parentdd=PersonAdd()
+        //none of the following functions can be called with the argument supplied
+//        var person4=Person4()
         var parent=Person4("ale")
         var child=Person4("xiaoxiaole",parent)
         LogUtil.e("parent:${parent.name}")
@@ -30,7 +34,7 @@ class ClassAct:AppCompatActivity(){
         LogUtil.e("下面开始定义子孙的变量了")
         var child2=Person5("zz",1,parent2)
         //cannot access <init>:it is private int 'DontCreateMe'
-//        DontCreateMe()
+        //DontCreateMe()
         var customer=Customer3()
         LogUtil.e(customer.customerName)
     }

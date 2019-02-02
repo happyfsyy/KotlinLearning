@@ -26,9 +26,15 @@ class Customer(name:String){
     //Property is explicitly assigned to parameter name,can be declared directed in constructor instead
     val name=name
 }
-class Person3(var firstname:String,var lastName:String,var age:Int){
+class Person3(private var firstname:String,val lastName:String,var age:Int){
 }
 class Customer2 public constructor(name:String){
+}
+class PersonAdd{
+    var children= arrayListOf<PersonAdd>()
+    constructor(parent: PersonAdd){
+        parent.children.add(this)
+    }
 }
 class Person4(var name:String){
     var children= arrayListOf<Person4>()
