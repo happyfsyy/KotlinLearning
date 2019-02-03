@@ -92,3 +92,83 @@ class Derived3:Base3(){
 open class AnotherDerived:Base3(){
     final override fun v() {}
 }
+open class Foo1{
+   open val x=1
+}
+class Bar1:Foo1(){
+    override val x: Int
+        get() = super.x
+}
+interface Foo2{
+    val count:Int
+}
+class Bar2(override val count:Int):Foo2
+class Bar3:Foo2{
+    override val count=1
+}
+open class Base4(val name:String){
+    init{
+        LogUtil.e("Base的初始化块")
+    }
+    open val size:Int=name.length.also { LogUtil.e("Base中初始化size$it") }
+    val param:Int=name.length.also {   LogUtil.e("Base中初始化param$it")}
+}
+class Derived4(
+    name:String,
+    val lastName:String):Base4(name.capitalize().also { LogUtil.e("给Base的参数$it") }){
+    init {
+        LogUtil.e("Derived的初始化块")
+    }
+    override val size:Int=(super.size+lastName.length).also { LogUtil.e("Derived中初始化size:$it") }
+}
+open class Foo4{
+    open fun f(){LogUtil.e("Foo4.f()")}
+    open val x:Int get() = 1
+}
+class Bar4:Foo4(){
+    override fun f(){
+        super.f()
+        LogUtil.e("Bar4.f()")
+    }
+    override val x:Int get()=super.x+1
+
+    inner class Baz{
+        fun g(){
+            f()
+            LogUtil.e(x)
+            super@Bar4.f()
+            LogUtil.e(super@Bar4.x)
+        }
+    }
+}
+open class A{
+    open fun f(){LogUtil.e("A")}
+    fun a(){LogUtil.e("a")}
+}
+interface B{
+    fun f(){LogUtil.e("B")}//接口成员默认是open的
+    fun b(){LogUtil.e("b")}
+}
+class C:A(),B{
+    override fun f() {
+        super<A>.f()
+        super<B>.f()
+    }
+}
+open class Base5{
+    open fun f(){}
+}
+abstract class Derived5:Base5(){
+    abstract override fun f()
+}
+
+
+
+
+
+
+
+
+
+
+

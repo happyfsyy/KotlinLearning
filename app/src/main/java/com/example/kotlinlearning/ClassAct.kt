@@ -37,6 +37,17 @@ class ClassAct:AppCompatActivity(){
         //DontCreateMe()
         var customer=Customer3()
         LogUtil.e(customer.customerName)
+        var d=Derived4("hello","world")
+        val bar4=Bar4()
+        bar4.f()
+        LogUtil.e(bar4.x)
+        val baz=bar4.Baz()
+        baz.g()
+        val c=C()
+        c.f()
+        c.a()
+        c.b()
+
     }
 }
 
