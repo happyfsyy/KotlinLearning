@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 
 /**
- * 类与继承：主构造函数，次构造函数，类的实例，继承，覆盖方法
+ * 类与继承：主构造函数，次构造函数，类的实例，继承，覆盖方法，覆盖属性
  * 参考链接：https://www.kotlincn.net/docs/reference/classes.html
  */
 class ClassAct:AppCompatActivity(){
@@ -47,7 +47,6 @@ class ClassAct:AppCompatActivity(){
         c.f()
         c.a()
         c.b()
-
     }
 }
 

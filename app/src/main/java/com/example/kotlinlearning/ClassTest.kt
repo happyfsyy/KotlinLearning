@@ -161,14 +161,3 @@ open class Base5{
 abstract class Derived5:Base5(){
     abstract override fun f()
 }
-
-
-
-
-
-
-
-
-
-
-
